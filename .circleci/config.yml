@@ -1,0 +1,40 @@
+version: 2.1
+
+executors:
+  python-executor:
+    docker:
+      - image: circleci/python:3.9  # Use a compatible Python version
+    working_directory: ~/repo
+
+jobs:
+  test:
+    executor: python-executor
+    steps:
+      - checkout
+      - run:
+          name: Install system dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3-dev default-libmysqlclient-dev
+      - run:
+          name: Upgrade pip
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+      - run:
+          name: Install Python dependencies
+          command: |
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - run:
+          name: Run tests
+          command: |
+            . venv/bin/activate
+            python manage.py test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
