@@ -4,7 +4,7 @@ import React from 'react';
 const Main = () => {
   return (
     <div>
-      <h1>Welcome to the Main Page</h1>
+      <h1>Welcome to Maungawhau Institute of Studies!</h1>
     </div>
   );
 };

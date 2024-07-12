@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Register from './Register';
-import Login from './Login';
-import MainForm from './MainForm';
+import Register from './components/Register';
+import Login from './components/Login';
+import MainForm from './components/Main_form';
 
 const App = () => {
   return (
     <Router>
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/main" element={<MainForm />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Mainform" element={<MainForm />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
