@@ -4,7 +4,8 @@ const MainForm = () => {
   return (
     <div>
       <h2>Main Form</h2>
-      {/* Add form or other content here */}
+      Welcome to Maungawhau Institute of Studies !
+
     </div>
   );
 };
