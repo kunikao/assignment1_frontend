@@ -1,12 +1,13 @@
-// assignment1_frontend/src/components/Main.js
 import React from 'react';
 
-const Main = () => {
+const MainForm = () => {
   return (
     <div>
-      <h1>Welcome to Maungawhau Institute of Studies!</h1>
+      <h2>Main Form</h2>
+      Welcome to Maungawhau Institute of Studies !
+
     </div>
   );
 };
 
-export default Main;
+export default MainForm;
