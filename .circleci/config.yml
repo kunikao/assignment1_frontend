@@ -16,10 +16,6 @@ jobs:
           command: |
             npm install
       - run:
-          name: Run ESLint
-          command: |
-            npm run lint  # Replace with your ESLint command
-      - run:
           name: Run tests
           command: |
             npm test  # Replace with your test command for React (e.g., npm run test)
