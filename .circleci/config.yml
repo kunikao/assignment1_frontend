@@ -1,37 +1,28 @@
 version: 2.1
 
 executors:
-  python-executor:
+  node-executor:
     docker:
-      - image: circleci/python:3.10  # Use a compatible Python version
+      - image: circleci/node:16  # Use a compatible Node.js version
     working_directory: ~/repo
 
 jobs:
   test:
-    executor: python-executor
+    executor: node-executor
     steps:
       - checkout
       - run:
-          name: Install system dependencies
+          name: Install Node.js dependencies
           command: |
-            sudo apt-get update
-            sudo apt-get install -y python3-dev default-libmysqlclient-dev
+            npm install
       - run:
-          name: Upgrade pip
+          name: Run ESLint
           command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install --upgrade pip
-      - run:
-          name: Install Python dependencies
-          command: |
-            . venv/bin/activate
-            pip install -r requirements.txt
+            npm run lint  # Replace with your ESLint command
       - run:
           name: Run tests
           command: |
-            . venv/bin/activate
-            python manage.py test
+            npm test  # Replace with your test command for React (e.g., npm run test)
 
 workflows:
   version: 2
