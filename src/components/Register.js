@@ -1,38 +1,46 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BaseUrl } from "../consistents";
+import { Link } from 'react-router-dom';
+function Register() {
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
 
-const Register = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('/api/register/', {
-        username,
-        password,
-        email,
+    axios.post(`${BaseUrl}register/`, formData)
+      .then((response) => {
+        console.log(response.data);
+        // Handle success (e.g., show success message)
+        alert('Registration successful!'); // Example: Show success message
+        window.location.href = '/login'; // Redirect to login page using window.location
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle error (e.g., show error message)
+        alert('Registration failed. Please try again.'); // Example: Show error message
       });
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage('Registration failed');
-    }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-        <button type="submit">Register</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+      <div>
+          <h2>Register</h2>
+          <form onSubmit={handleSubmit}>
+              <input type="text" name="username" placeholder="Username" value={formData.username}
+                     onChange={handleChange}/>
+              <input type="password" name="password" placeholder="Password" value={formData.password}
+                     onChange={handleChange}/>
+              <button type="submit">Register</button>
+          </form>
+          <p>Already have an account? <Link to="/login">Login here</Link></p>
+      </div>
   );
-};
+}
 
 export default Register;
