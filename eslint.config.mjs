@@ -17,7 +17,10 @@ export default [
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
-    plugins: ["@eslint/js", "eslint-plugin-react"],
+    plugins: {
+      "@eslint/js": pluginJs,
+      "eslint-plugin-react": pluginReactConfig
+    },
     extends: [
       "plugin:@eslint/js/recommended",
       "plugin:react/recommended"
