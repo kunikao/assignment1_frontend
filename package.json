@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,12 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.7.0",
+    "eslint": "^9.7.0",
+    "eslint-plugin-react": "^7.34.3",
+    "globals": "^15.8.0"
+  }
 }
