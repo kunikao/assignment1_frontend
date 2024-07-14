@@ -44,5 +44,6 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(axios)/)"
     ]
-  }
+  },
+  "keywords": []
 }
