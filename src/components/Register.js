@@ -18,8 +18,8 @@ function Register() {
       .then((response) => {
         console.log(response.data);
         // Handle success (e.g., show success message)
-        alert('Registration successful!'); // Example: Show success message
-        window.location.href = '/login'; // Redirect to login page using window.location
+        alert('Registration successful!');
+        window.location.href = '/login';
       })
       .catch((error) => {
         console.error('Error:', error);

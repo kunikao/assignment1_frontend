@@ -16,7 +16,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${BaseUrl}login/`, formData)
+    axios.post(`${BaseUrl}auth/`, formData)
       .then((response) => {
         console.log(response.data);
         if (response.data.access) {
