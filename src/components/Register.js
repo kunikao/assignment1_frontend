@@ -19,7 +19,7 @@ function Register() {
         console.log(response.data);
         // Handle success (e.g., show success message)
         alert('Registration successful!');
-        window.location.href = '/login';
+        window.location.href = '/auth';
       })
       .catch((error) => {
         console.error('Error:', error);
