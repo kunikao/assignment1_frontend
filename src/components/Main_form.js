@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {BaseUrl} from "../consistents";
 
 function MainForm() {
   const [mainFormData, setMainFormData] = useState([]);
@@ -19,12 +20,12 @@ function MainForm() {
     <div>
       <h2>Main Form</h2>
         Welcome to Maungawhau Institute of Studies!
-      <ul>
+      {/*<ul>*/}
 
-        {mainFormData.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      {/*  {mainFormData.map((item) => (*/}
+      {/*    <li key={item.id}>{item.name}</li>*/}
+      {/*  ))}*/}
+      {/*</ul>*/}
     </div>
   );
 }
