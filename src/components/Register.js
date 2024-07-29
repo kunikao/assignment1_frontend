@@ -30,7 +30,7 @@ function Register() {
 
   return (
       <div>
-          <h2>Maungawhaua Institute of Studies </h2><h2>Register</h2>
+          <h2>Maungawhau Institute of Studies </h2><h2>Register</h2>
           <form onSubmit={handleSubmit}>
               <input type="text" name="username" placeholder="Username" value={formData.username}
                      onChange={handleChange}/>
