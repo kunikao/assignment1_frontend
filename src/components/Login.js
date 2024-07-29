@@ -17,11 +17,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`${BaseUrl}auth/`, formData)
+    axios.post(`${BaseUrl}/api/login/`, formData)
       .then((response) => {
         console.log(response.data);
-        if (response.data.access) {
-          localStorage.setItem('token', response.data.access);
+        if (response.data.token) {
+          localStorage.setItem('token', response.data.token);
           navigate('/mainform');
         } else {
           alert('Login failed. Invalid credentials.');
