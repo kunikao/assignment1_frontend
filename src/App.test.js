@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer'; // Import the renderer
-import App from './App'; // Import the component you want to test
+import HelloWorld from './components/HelloWorld';
 
 test('renders correctly', () => {
   // Render the component
-  const component = renderer.create(<App />);
+  const component = renderer.create(<HelloWorld />);
 
   // Convert the component to JSON
   const tree = component.toJSON();
