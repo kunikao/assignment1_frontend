@@ -1,14 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer'; // Import the renderer
-import App from './App'; // Import the component you want to test
+import renderer from 'react-test-renderer';
+import HelloWorld from "./components/HelloWorld";
+
 
 test('renders correctly', () => {
-  // Render the component
-  const component = renderer.create(<App />);
-
-  // Convert the component to JSON
-  const tree = component.toJSON();
-
-  // Compare the rendered component to a stored snapshot
-  expect(tree).toMatchSnapshot();
+    const component = renderer.create(<HelloWorld />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
 });
