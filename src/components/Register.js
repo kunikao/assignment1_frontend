@@ -16,7 +16,6 @@ function Register() {
     e.preventDefault();
     axios.post(`${BaseUrl}register/`, formData)
       .then((response) => {
-        console.log(response.data);
         // Handle success (e.g., show success message)
         alert('Registration successful!');
         window.location.href = '/auth';

@@ -32,6 +32,8 @@ function MainForm() {
       {/*    <li key={item.id}>{item.name}</li>*/}
       {/*  ))}*/}
       {/*</ul>*/}
+
+        <div style={{marginTop: '50px'}}></div>
         <button onClick={createchatroom}>Create Chat Room</button>
     </div>
   );
