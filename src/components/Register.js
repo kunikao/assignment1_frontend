@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { BaseUrl } from "../consistents";
 import { Link } from 'react-router-dom';
-function Register() {
+function RGR() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -16,6 +16,7 @@ function Register() {
     e.preventDefault();
     axios.post(`${BaseUrl}register/`, formData)
       .then((response) => {
+        console.log("-------------check data");
         console.log(response.data);
         // Handle success (e.g., show success message)
         alert('Registration successful!');
